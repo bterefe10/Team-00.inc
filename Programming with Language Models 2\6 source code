@@ -1,0 +1,22 @@
+from textblob import TextBlob
+
+def analyze_sentiment(text):
+  """
+  Analyzes the sentiment of a text string and returns a message.
+  """
+  blob = TextBlob(text)
+  sentiment = blob.sentiment
+
+  if sentiment.polarity > 0:
+    return "The sentiment of the text is: Positive"
+  elif sentiment.polarity < 0:
+    return "The sentiment of the text is: Negative"
+  else:
+    return "The sentiment of the text is: Neutral"
+
+# Get text input
+text = input("Enter a text string: ")
+
+# Analyze sentiment and print message
+message = analyze_sentiment(text)
+print(message)
